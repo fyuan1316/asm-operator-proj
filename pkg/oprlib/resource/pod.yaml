@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: test-1
+spec:
+  template:
+    spec:
+      containers:
+      - image: index.alauda.cn/alaudaorg/amlfilebrowser:v1.7-b.1
+        name: filebrowser
+        resources:
+          limits:
+            cpu: 200m
+            memory: 512Mi
+          requests:
+            cpu: 50m
+            memory: 256Mi
